@@ -2,7 +2,7 @@ package com.cppfooddelivery;
 import java.sql.Time;
 import java.util.*;
 
-class Driver implements Observer {
+class Driver{
     private String name;
     private String address;
     private String county;
@@ -32,11 +32,6 @@ class Driver implements Observer {
             default:
                 return false;
         }
-    }
-
-    @Override
-    public void notify(Order order) {
-        System.out.println("Driver " + name + " received order " + order.getId());
     }
 }
 
