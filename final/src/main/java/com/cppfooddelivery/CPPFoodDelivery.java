@@ -23,4 +23,8 @@ public class CPPFoodDelivery {
     public void addCustomer(Customer newCustomer){customersList.add(newCustomer);}
     public void addRestaurant(Restaurant newRestaurant){restaurantsList.add(newRestaurant);}
     public void addDriver(Driver newDriver){driversList.add(newDriver);}
+
+    public List<Customer> getCustomersList() {return customersList;}
+    public List<Restaurant> getRestaurantsList() {return restaurantsList;}
+    public List<Driver> getDriversList() {return driversList;}
 }
