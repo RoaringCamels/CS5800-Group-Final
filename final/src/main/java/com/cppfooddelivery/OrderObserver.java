@@ -1,5 +1,5 @@
 package com.cppfooddelivery;
 
-public class OrderObserver {
-    
+public interface OrderObserver {
+    void update( Order order);
 }
