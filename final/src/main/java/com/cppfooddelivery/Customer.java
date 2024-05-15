@@ -11,6 +11,8 @@ public class Customer {
         this.county = county;
     }
 
-    // Getters and setters
+    public String getName() {return name;}
+    public String getAddress() {return address;}
+    public String getCounty() {return county;}
 }
 
