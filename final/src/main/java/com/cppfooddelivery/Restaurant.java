@@ -1,12 +1,19 @@
 package com.cppfooddelivery;
 
-public class Restaurant {
+import com.cppfooddelivery.observer.*;
+import com.cppfooddelivery.observer.Observer;
+
+import java.util.*;
+
+public class Restaurant implements Subject{
     private String name;
     private String address;
     private String county;
     private OperatingHours operatingHours;
     private String cuisine;
     private Menu menu;
+
+    private List<Observer> observers;
 
     public Restaurant (String name, String address, String county, OperatingHours operatingHours, String cuisine, Menu menu){
         this.name = name;
@@ -15,6 +22,7 @@ public class Restaurant {
         this.operatingHours = operatingHours;
         this.cuisine = cuisine;
         this.menu = menu;
+        this.observers = new ArrayList<>();
     }
 
     public String getName() {return name;}
@@ -23,4 +31,21 @@ public class Restaurant {
     public OperatingHours getOperatingHours() {return operatingHours;}
     public String getCuisine() {return cuisine;}
     public Menu getMenu() {return menu;}
+
+    @Override
+    public void resgisterObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer obs : observers){
+            obs.update("You have been notified by: " + name);
+        }
+    }
 }
