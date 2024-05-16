@@ -1,13 +1,9 @@
 package com.cppfooddelivery;
 import com.cppfooddelivery.abstractfactory.*;
-import com.cppfooddelivery.abstractfactory.carbs.Carbs;
-import com.cppfooddelivery.abstractfactory.factory.DietPlanFactory;
-import com.cppfooddelivery.abstractfactory.factory.NoRestrictionFactory;
-import com.cppfooddelivery.abstractfactory.factory.NutAllergyFactory;
-import com.cppfooddelivery.abstractfactory.factory.PaleoFactory;
-import com.cppfooddelivery.abstractfactory.factory.VeganFactory;
-import com.cppfooddelivery.abstractfactory.fats.Fats;
-import com.cppfooddelivery.abstractfactory.protein.Protein;
+import com.cppfooddelivery.abstractfactory.carbs.*;
+import com.cppfooddelivery.abstractfactory.factory.*;
+import com.cppfooddelivery.abstractfactory.fats.*;
+import com.cppfooddelivery.abstractfactory.protein.*;
 
 public class Customer {
     private String name;
