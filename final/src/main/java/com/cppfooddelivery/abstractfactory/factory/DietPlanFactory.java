@@ -1,8 +1,7 @@
 package com.cppfooddelivery.abstractfactory.factory;
-
-import com.cppfooddelivery.abstractfactory.carbs.Carbs;
-import com.cppfooddelivery.abstractfactory.protein.Protein;
-import com.cppfooddelivery.abstractfactory.fats.Fats;
+import com.cppfooddelivery.abstractfactory.carbs.*;
+import com.cppfooddelivery.abstractfactory.protein.*;
+import com.cppfooddelivery.abstractfactory.fats.*;
 
 public interface DietPlanFactory {
     Carbs createCarbs();

@@ -1,5 +1,5 @@
 package com.cppfooddelivery.abstractfactory;
 
-public interface MacroNutrients {
+public interface Macronutrients{
     String getFood();
 }

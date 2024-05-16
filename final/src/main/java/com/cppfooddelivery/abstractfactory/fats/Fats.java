@@ -1,4 +1,4 @@
 package com.cppfooddelivery.abstractfactory.fats;
-import com.cppfooddelivery.abstractfactory.*;
+import com.cppfooddelivery.abstractfactory.Macronutrients;
 
-public interface Fats extends MacroNutrients{}
+public interface Fats extends Macronutrients{}

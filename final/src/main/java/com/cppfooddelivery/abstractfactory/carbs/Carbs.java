@@ -1,6 +1,4 @@
 package com.cppfooddelivery.abstractfactory.carbs;
-import com.cppfooddelivery.abstractfactory.*;
+import com.cppfooddelivery.abstractfactory.Macronutrients;
 
-public interface Carbs extends MacroNutrients{
-    
-}
+public interface Carbs extends Macronutrients{}
