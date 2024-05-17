@@ -87,12 +87,14 @@ public class Main {
       cpp.addRestaurant(r4);
 
       // Simulate orders
-      Order order1 = cpp.placeOrder(customer1, r1, createFoodItem.burger);
+      cpp.placeOrder(customer1, r1, createFoodItem.burger);
+      Order order1 = cpp.getOrdersList().get(0);
       cpp.assignDriverToOrder(order1, d1);
       cpp.pickUpOrder(order1);
       cpp.deliverOrder(order1);
 
-      Order order2 = cpp.placeOrder(customer2, r2, createFoodItem.pizza);
+      cpp.placeOrder(customer2, r2, createFoodItem.pizza);
+      Order order2 = cpp.getOrdersList().get(1);
       cpp.assignDriverToOrder(order2, d2);
       cpp.pickUpOrder(order2);
       cpp.deliverOrder(order2);
