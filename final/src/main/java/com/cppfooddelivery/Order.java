@@ -26,7 +26,10 @@ public class Order {
     public Restaurant getRestaurant() {return restaurant;}
     public FoodItem getFoodItem() {return foodItem;}
     public Driver getDriver() {return driver;}
-    
+    public LocalDateTime getOrderTime() {return orderTime;}
+    public LocalDateTime getPickupTime() {return pickupTime;}
+    public LocalDateTime getDeliveryTime() {return deliveryTime;}
+
     public void assignDriver(Driver driver) {
         this.driver = driver;
         this.status = "Driver Assigned";
