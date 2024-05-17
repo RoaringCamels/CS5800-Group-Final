@@ -1,6 +1,6 @@
 package com.cppfooddelivery;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import com.cppfooddelivery.fooditems.FoodItem;
 
 public class Order {
@@ -8,27 +8,28 @@ public class Order {
     private Restaurant restaurant;
     private FoodItem foodItem;
     private Driver driver;
-    private LocalDateTime orderTime;
-    private LocalDateTime pickupTime;
-    private LocalDateTime deliveryTime;
+    private LocalTime orderTime;
+    private LocalTime pickupTime;
+    private LocalTime deliveryTime;
     private String status;
 
     public Order(Customer customer, Restaurant restaurant, FoodItem foodItem) {
         this.customer = customer;
         this.restaurant = restaurant;
         this.foodItem = foodItem;
-        this.orderTime = LocalDateTime.now();
+        this.orderTime = LocalTime.now();
         this.status = "Placed";
+        this.orderTime = LocalTime.now();
     }
 
-    public String getStatus() {return status;}
-    public Customer getCustomer() {return customer;}
-    public Restaurant getRestaurant() {return restaurant;}
-    public FoodItem getFoodItem() {return foodItem;}
-    public Driver getDriver() {return driver;}
-    public LocalDateTime getOrderTime() {return orderTime;}
-    public LocalDateTime getPickupTime() {return pickupTime;}
-    public LocalDateTime getDeliveryTime() {return deliveryTime;}
+    public String getStatus() { return status; }
+    public Customer getCustomer() { return customer; }
+    public Restaurant getRestaurant() { return restaurant; }
+    public FoodItem getFoodItem() { return foodItem; }
+    public Driver getDriver() { return driver; }
+    public LocalTime getOrderTime() { return orderTime; }
+    public LocalTime getPickupTime() { return pickupTime; }
+    public LocalTime getDeliveryTime() { return deliveryTime; }
 
     public void assignDriver(Driver driver) {
         this.driver = driver;
@@ -36,12 +37,12 @@ public class Order {
     }
 
     public void pickUp() {
-        this.pickupTime = LocalDateTime.now();
+        this.pickupTime = LocalTime.now();
         this.status = "Picked Up";
     }
 
     public void deliver() {
-        this.deliveryTime = LocalDateTime.now();
+        this.deliveryTime = LocalTime.now();
         this.status = "Delivered";
     }
 
@@ -56,4 +57,3 @@ public class Order {
                 '}';
     }
 }
-

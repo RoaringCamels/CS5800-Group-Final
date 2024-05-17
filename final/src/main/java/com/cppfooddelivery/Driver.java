@@ -22,17 +22,19 @@ class Driver{
     public String getCounty() {return county;}
     public String getShift() {return shift;}
 
-    public boolean isAvailable(LocalDateTime dateTime) {
-    LocalTime currentTime = dateTime.toLocalTime();
-    switch (shift) {
-        case "1st shift":
-            return currentTime.isAfter(LocalTime.of(8, 0)) && currentTime.isBefore(LocalTime.of(16, 0));
-        case "2nd shift":
-            return currentTime.isAfter(LocalTime.of(16, 0)) || currentTime.isBefore(LocalTime.of(8, 0));
-        case "3rd shift":
-            return currentTime.isAfter(LocalTime.of(0, 0)) && currentTime.isBefore(LocalTime.of(8, 0));
-        default:
-            return false;
+    public boolean isAvailable(LocalTime time, OperatingHours restaurantHours) {
+        switch (shift) {
+            case "1st Shift":
+                return time.isAfter(restaurantHours.getOpenTime()) && time.isBefore(restaurantHours.getCloseTime());
+            case "2nd Shift":
+                return time.isAfter(restaurantHours.getCloseTime()) && time.isBefore(restaurantHours.getOpenTime());
+            case "3rd Shift":
+                return time.isAfter(restaurantHours.getCloseTime().plusHours(8)) && time.isBefore(restaurantHours.getOpenTime().plusHours(8));
+            default:
+                return false;
+        }
     }
+    
+    
 }
 

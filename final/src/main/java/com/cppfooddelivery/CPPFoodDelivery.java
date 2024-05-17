@@ -39,20 +39,47 @@ public class CPPFoodDelivery {
         System.out.println("Order placed by " + customer.getName() + " for " + foodItem.getName() + " at " + restaurant.getName());
     }
 
-    public void assignDriverToOrder(Order order, Driver driver) {
+    public void assignDriverToOrder(Order order) {
+        if (driversList.isEmpty()) {
+            System.out.println("No drivers available for order from " + order.getCustomer().getName());
+            return;
+        }
+    
+        boolean assigned = false;
         int index = 0;
-        if (driversList.get(index).isAvailable(order.getPickupTime()))
-        order.assignDriver(driver);
-        System.out.println("Driver " + driver.getName() + " assigned to order for " + order.getCustomer().getName());
-    }
+    
+        while (!assigned && index < driversList.size()) {
+            Driver driver = driversList.get(index);
+            if (driver.isAvailable(order.getOrderTime(), order.getRestaurant().getOperatingHours())) {
+                order.assignDriver(driver);
+                System.out.println("Driver " + driver.getName() + " assigned to order for " + order.getCustomer().getName());
+                assigned = true;
+            } else {
+                index++;
+            }
+        }
+    
+        if (!assigned) {
+            System.out.println("No available drivers for order from " + order.getCustomer().getName());
+        }
+    }    
 
     public void pickUpOrder(Order order) {
-        order.pickUp();
-        System.out.println("Order for " + order.getCustomer().getName() + " picked up by " + order.getDriver().getName());
+        Driver assignedDriver = order.getDriver(); // Get the assigned driver from the order
+        if (assignedDriver != null) { // Check if the assigned driver is not null
+            System.out.println("Driver " + assignedDriver.getName() + " picked up the order for " + order.getCustomer().getName());
+        } else {
+            System.out.println("No driver assigned to pick up the order for " + order.getCustomer().getName());
+        }
     }
 
     public void deliverOrder(Order order) {
-        order.deliver();
-        System.out.println("Order for " + order.getCustomer().getName() + " delivered by " + order.getDriver().getName());
+        Driver assignedDriver = order.getDriver(); // Get the assigned driver from the order
+        if (assignedDriver != null) { // Check if the assigned driver is not null
+            System.out.println("Driver " + assignedDriver.getName() + " delivered the order for " + order.getCustomer().getName());
+        } else {
+            System.out.println("No driver assigned to deliver the order for " + order.getCustomer().getName());
+        }
     }
+    
 }
