@@ -2,6 +2,7 @@ package com.cppfooddelivery;
 
 import java.time.LocalTime;
 import com.cppfooddelivery.fooditems.FoodItem;
+import com.cppfooddelivery.observer.*;;
 
 public class Order {
     private Customer customer;
@@ -12,6 +13,7 @@ public class Order {
     private LocalTime pickupTime;
     private LocalTime deliveryTime;
     private String status;
+    private OrderSubject orderSubject;
 
     public Order(Customer customer, Restaurant restaurant, FoodItem foodItem) {
         this.customer = customer;
@@ -20,6 +22,8 @@ public class Order {
         this.orderTime = LocalTime.now();
         this.status = "Placed";
         this.orderTime = LocalTime.now();
+        notifyRestaurant();
+        
     }
 
     public String getStatus() { return status; }

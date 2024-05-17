@@ -1,8 +1,8 @@
 package com.cppfooddelivery;
 
 import java.time.*;
-
 import com.cppfooddelivery.abstractfactory.DietPlan;
+import com.cppfooddelivery.observer.*;
 
 public class Main {
    public static void main(String[] args) {
@@ -85,6 +85,13 @@ public class Main {
       cpp.addRestaurant(r2);
       cpp.addRestaurant(r3);
       cpp.addRestaurant(r4);
+
+      // Create order subject
+      OrderSubject orderSubject = new OrderSubject();
+
+      // Register restaurants as observers
+      orderSubject.resgisterObserver(r1);
+      orderSubject.resgisterObserver(r2);
 
       // Simulate orders
       cpp.placeOrder(customer1, r1, createFoodItem.burger);
