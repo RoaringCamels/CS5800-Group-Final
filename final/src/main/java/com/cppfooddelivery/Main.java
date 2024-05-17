@@ -1,10 +1,8 @@
 package com.cppfooddelivery;
 
-import java.util.*;
 import java.time.*;
 
 import com.cppfooddelivery.abstractfactory.DietPlan;
-import com.cppfooddelivery.fooditems.*;
 
 public class Main {
    public static void main(String[] args) {
@@ -88,9 +86,16 @@ public class Main {
       cpp.addRestaurant(r3);
       cpp.addRestaurant(r4);
 
-      customer1.createMeal();
-   }
+      // Simulate orders
+      Order order1 = cpp.placeOrder(customer1, r1, createFoodItem.burger);
+      cpp.assignDriverToOrder(order1, d1);
+      cpp.pickUpOrder(order1);
+      cpp.deliverOrder(order1);
 
-   
+      Order order2 = cpp.placeOrder(customer2, r2, createFoodItem.pizza);
+      cpp.assignDriverToOrder(order2, d2);
+      cpp.pickUpOrder(order2);
+      cpp.deliverOrder(order2);
+   }
 }
 
