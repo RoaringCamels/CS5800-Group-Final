@@ -18,6 +18,7 @@
     Allows the customer to add whatever topping they want to their order
 
 # OOA & OOD for Netflix Competitor, CPPMovies
-## Members
-* Ivan Revilla
-* Andy Munoz
+
+## Members & Contributions
+* **Ivan Revilla** - Part 1
+* **Andy Munoz** - Part 2
