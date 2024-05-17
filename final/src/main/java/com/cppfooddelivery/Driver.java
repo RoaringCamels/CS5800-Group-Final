@@ -20,7 +20,7 @@ class Driver{
     public String getCounty() {return county;}
     public String getShift() {return shift;}
 
-    public boolean isAvailable(LocalTime time, OperatingHours restaurantHours) {
+    public boolean isAvailable(LocalTime time, OperatingHours restaurantHours, Restaurant restaurant) {
         LocalTime shiftStart;
         LocalTime shiftEnd;
 
@@ -42,10 +42,11 @@ class Driver{
         }
 
         if (shiftEnd.isAfter(shiftStart)) {
-            return !time.isBefore(shiftStart) && time.isBefore(shiftEnd);
+            return (!time.isBefore(shiftStart) && time.isBefore(shiftEnd)) && restaurant.getCounty().equals(this.county);
         } else {
-            return !time.isBefore(shiftStart) || time.isBefore(shiftEnd);
+            return (!time.isBefore(shiftStart) || time.isBefore(shiftEnd)) && restaurant.getCounty().equals(this.county);
         }
+        
     }
     
     

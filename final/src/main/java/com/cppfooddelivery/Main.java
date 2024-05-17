@@ -69,6 +69,11 @@ public class Main {
       Restaurant r3 = new Restaurant("Theater", "789 Street St.", "San Bernardino", r3Hours, "Mexican", r3Menu);
       Restaurant r4 = new Restaurant("We Have It ALl", "456 Side St.", "Orange", r4Hours, "American", r4Menu);
 
+      // Register CustomerObservers
+      r1.registerObserver(new CustomerObserver(customer1.getName()));
+      r2.registerObserver(new CustomerObserver(customer2.getName()));
+
+      // add to cpp
       cpp.addCustomer(customer1);
       cpp.addCustomer(customer2);
       cpp.addCustomer(customer3);
@@ -92,10 +97,6 @@ public class Main {
       cpp.addRestaurant(r3);
       cpp.addRestaurant(r4);
 
-       // Register CustomerObservers
-       r1.registerObserver(new CustomerObserver(customer1.getName()));
-       r2.registerObserver(new CustomerObserver(customer2.getName()));
-
       // Simulate orders
       cpp.placeOrder(customer1, r1, burger);
       Order order1 = cpp.getOrdersList().get(0);
@@ -109,6 +110,27 @@ public class Main {
       cpp.assignDriverToOrder(order2);
       cpp.pickUpOrder(order2);
       cpp.deliverOrder(order2);
+
+      FoodItemComponent chickenSandwich = new FoodItem("Chicken Sandwich", 9.00);
+      cpp.placeOrder(customer3, r4, chickenSandwich);
+      Order order3 = cpp.getOrdersList().get(2);
+      cpp.assignDriverToOrder(order3);
+      cpp.pickUpOrder(order3);
+      cpp.deliverOrder(order3);
+
+      FoodItemComponent customTaco = new Guacamole(taco);
+      cpp.placeOrder(customer4, r3, customTaco);
+      Order order4 = cpp.getOrdersList().get(3);
+      cpp.assignDriverToOrder(order4);
+      cpp.pickUpOrder(order4);
+      cpp.deliverOrder(order4);
+
+      FoodItemComponent veggieBurger = new FoodItem("Veggie Burger", 8.00);
+      cpp.placeOrder(customer5, r1, veggieBurger);
+      Order order5 = cpp.getOrdersList().get(4);
+      cpp.assignDriverToOrder(order5);
+      cpp.pickUpOrder(order5);
+      cpp.deliverOrder(order5);
    }
 }
 

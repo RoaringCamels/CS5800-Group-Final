@@ -1,14 +1,14 @@
 package com.cppfooddelivery.fooditems.toppings;
 import com.cppfooddelivery.fooditems.*;
 
-public class Cheese extends FoodItemDecorator {
-    public Cheese(FoodItemComponent foodItem) {
+public class Guacamole extends FoodItemDecorator {
+    public Guacamole(FoodItemComponent foodItem) {
         super(foodItem);
     }
 
     @Override
     public String getDescription() {
-        return foodItem.getDescription() + ", with cheese";
+        return foodItem.getDescription() + ", with Guacamole";
     }
 
     @Override
@@ -18,6 +18,6 @@ public class Cheese extends FoodItemDecorator {
 
     @Override
     public String getName() {
-        return "Cheese";
+        return "Guacamole";
     }
 }

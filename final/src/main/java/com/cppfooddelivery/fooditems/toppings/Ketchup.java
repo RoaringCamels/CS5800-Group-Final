@@ -8,12 +8,12 @@ public class Ketchup extends FoodItemDecorator {
 
     @Override
     public String getDescription() {
-        return foodItem.getDescription() + ", with cheese";
+        return foodItem.getDescription() + ", with ketchup";
     }
 
     @Override
     public double getCost() {
-        return foodItem.getCost() + 1.50; // Adding cost for cheese
+        return foodItem.getCost() + 1.50;
     }
 
     @Override

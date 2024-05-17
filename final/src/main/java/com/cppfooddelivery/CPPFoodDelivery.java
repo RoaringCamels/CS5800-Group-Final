@@ -52,7 +52,7 @@ public class CPPFoodDelivery {
     
         while (!assigned && index < driversList.size()) {
             Driver driver = driversList.get(index);
-            if (driver.isAvailable(order.getOrderTime(), order.getRestaurant().getOperatingHours())) {
+            if (driver.isAvailable(order.getOrderTime(), order.getRestaurant().getOperatingHours(), order.getRestaurant())) {
                 order.assignDriver(driver);
                 System.out.println("Driver " + driver.getName() + " assigned to order for " + order.getCustomer().getName());
                 assigned = true;
