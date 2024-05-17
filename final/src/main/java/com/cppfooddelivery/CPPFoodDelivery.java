@@ -14,6 +14,7 @@ public class CPPFoodDelivery {
         customersList = new ArrayList<>();
         restaurantsList = new ArrayList<>();
         driversList = new ArrayList<>();
+        ordersList = new ArrayList<>();
     }
 
     public static CPPFoodDelivery getInstance(){
