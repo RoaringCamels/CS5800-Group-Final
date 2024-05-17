@@ -40,6 +40,8 @@ public class CPPFoodDelivery {
     }
 
     public void assignDriverToOrder(Order order, Driver driver) {
+        int index = 0;
+        if (driversList.get(index).isAvailable(order.getPickupTime()))
         order.assignDriver(driver);
         System.out.println("Driver " + driver.getName() + " assigned to order for " + order.getCustomer().getName());
     }
