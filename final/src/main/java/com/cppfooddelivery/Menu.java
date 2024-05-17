@@ -3,13 +3,13 @@ package com.cppfooddelivery;
 import java.util.*;
 import com.cppfooddelivery.fooditems.*;
 public class Menu {
-    private ArrayList<FoodItem> foodItemList;
+    private ArrayList<FoodItemComponent> foodItemList;
 
     public Menu(){
-        this.foodItemList = new ArrayList<FoodItem>();
+        this.foodItemList = new ArrayList<FoodItemComponent>();
     }
 
-    public List<FoodItem> getFoodItemList() {return foodItemList;}
+    public List<FoodItemComponent> getFoodItemList() {return foodItemList;}
 
-    public void add(FoodItem item) {foodItemList.add(item);}
+    public void add(FoodItemComponent item) {foodItemList.add(item);}
 }

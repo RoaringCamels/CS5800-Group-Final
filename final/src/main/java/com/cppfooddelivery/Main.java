@@ -2,6 +2,8 @@ package com.cppfooddelivery;
 
 import java.time.*;
 import com.cppfooddelivery.abstractfactory.DietPlan;
+import com.cppfooddelivery.fooditems.*;
+import com.cppfooddelivery.fooditems.toppings.*;
 import com.cppfooddelivery.observer.*;
 
 public class Main {
@@ -10,7 +12,11 @@ public class Main {
       CPPFoodDelivery cpp = CPPFoodDelivery.getInstance();
 
       // Create all base food items available
-      CreateFoodItemForMain createFoodItem = new CreateFoodItemForMain();
+      FoodItemComponent burger = new FoodItem("Burger", 10.00);
+      FoodItemComponent fries = new FoodItem("Fries", 4.00);
+      FoodItemComponent hotdog = new FoodItem("HotDog", 5.00);
+      FoodItemComponent pizza = new FoodItem("Pizza", 6.00);
+      FoodItemComponent taco = new FoodItem("Pizza", 2.00);
 
       // Create Customers
       Customer customer1 = new Customer("Customer 1", "123 Main St.", "LA",DietPlan.NO_RESTRICTION);
@@ -36,20 +42,20 @@ public class Main {
 
       // Create Menus
       Menu r1Menu = new Menu();
-      r1Menu.add(createFoodItem.burger);
+      r1Menu.add(burger);
 
       Menu r2Menu = new Menu();
-      r2Menu.add(createFoodItem.pizza);
+      r2Menu.add(pizza);
 
       Menu r3Menu = new Menu();
-      r3Menu.add(createFoodItem.hotdog);
-      r3Menu.add(createFoodItem.taco);
+      r3Menu.add(hotdog);
+      r3Menu.add(taco);
 
       Menu r4Menu = new Menu();
-      r4Menu.add(createFoodItem.burger);
-      r4Menu.add(createFoodItem.fries);
-      r4Menu.add(createFoodItem.taco);
-      r4Menu.add(createFoodItem.pizza);
+      r4Menu.add(burger);
+      r4Menu.add(fries);
+      r4Menu.add(taco);
+      r4Menu.add(pizza);
 
       // Create operating hours
       OperatingHours r1Hours = new OperatingHours(LocalTime.of(8,0), LocalTime.of(22,0));
@@ -91,13 +97,14 @@ public class Main {
        r2.registerObserver(new CustomerObserver(customer2.getName()));
 
       // Simulate orders
-      cpp.placeOrder(customer1, r1, createFoodItem.burger);
+      cpp.placeOrder(customer1, r1, burger);
       Order order1 = cpp.getOrdersList().get(0);
       cpp.assignDriverToOrder(order1);
       cpp.pickUpOrder(order1);
       cpp.deliverOrder(order1);
 
-      cpp.placeOrder(customer2, r2, createFoodItem.pizza);
+      FoodItemComponent customPizza = new Cheese(pizza);
+      cpp.placeOrder(customer2, r2, customPizza);
       Order order2 = cpp.getOrdersList().get(1);
       cpp.assignDriverToOrder(order2);
       cpp.pickUpOrder(order2);

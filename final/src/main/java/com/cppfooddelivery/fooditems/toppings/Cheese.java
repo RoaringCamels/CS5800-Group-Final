@@ -1,19 +1,23 @@
 package com.cppfooddelivery.fooditems.toppings;
-import com.cppfooddelivery.fooditems.FoodItem;
+import com.cppfooddelivery.fooditems.*;
 
-public class Cheese implements Topping{
-    private String name = "Cheese";
-    private FoodItem foodItem;
-    private double toppingsPrice = 1.0;
-
-    public Cheese(FoodItem foodItem){this.foodItem = foodItem;}
-    @Override
-    public String getName() {
-        return " with " + name;
+public class Cheese extends FoodItemDecorator {
+    public Cheese(FoodItemComponent foodItem) {
+        super(foodItem);
     }
 
     @Override
-    public double getPrice() {
-        return foodItem.getPrice() + toppingsPrice;
-    }    
+    public String getDescription() {
+        return foodItem.getDescription() + ", with cheese";
+    }
+
+    @Override
+    public double getCost() {
+        return foodItem.getCost() + 1.50; // Adding cost for cheese
+    }
+
+    @Override
+    public String getName() {
+        return "Cheese";
+    }
 }

@@ -2,6 +2,7 @@ package com.cppfooddelivery;
 import java.util.*;
 
 import com.cppfooddelivery.fooditems.FoodItem;
+import com.cppfooddelivery.fooditems.FoodItemComponent;
 
 public class CPPFoodDelivery {
     private static CPPFoodDelivery instance = null;
@@ -33,7 +34,7 @@ public class CPPFoodDelivery {
     public void addRestaurant(Restaurant newRestaurant){restaurantsList.add(newRestaurant);}
     public void addDriver(Driver newDriver){driversList.add(newDriver);}
 
-    public void placeOrder(Customer customer, Restaurant restaurant, FoodItem foodItem) {
+    public void placeOrder(Customer customer, Restaurant restaurant, FoodItemComponent foodItem) {
         Order order = new Order(customer, restaurant, foodItem);
         ordersList.add(order);
         restaurant.notifyObservers("New order placed at " + restaurant.getName());

@@ -1,20 +1,19 @@
 package com.cppfooddelivery;
 
 import java.time.LocalTime;
-import com.cppfooddelivery.fooditems.FoodItem;
-import com.cppfooddelivery.observer.*;;
+import com.cppfooddelivery.fooditems.FoodItemComponent;
 
 public class Order {
     private Customer customer;
     private Restaurant restaurant;
-    private FoodItem foodItem;
+    private FoodItemComponent foodItem;
     private Driver driver;
     private LocalTime orderTime;
     private LocalTime pickupTime;
     private LocalTime deliveryTime;
     private String status;
 
-    public Order(Customer customer, Restaurant restaurant, FoodItem foodItem) {
+    public Order(Customer customer, Restaurant restaurant, FoodItemComponent foodItem) {
         this.customer = customer;
         this.restaurant = restaurant;
         this.foodItem = foodItem;
@@ -27,7 +26,7 @@ public class Order {
     public String getStatus() { return status; }
     public Customer getCustomer() { return customer; }
     public Restaurant getRestaurant() { return restaurant; }
-    public FoodItem getFoodItem() { return foodItem; }
+    public FoodItemComponent getFoodItem() { return foodItem; }
     public Driver getDriver() { return driver; }
     public LocalTime getOrderTime() { return orderTime; }
     public LocalTime getPickupTime() { return pickupTime; }

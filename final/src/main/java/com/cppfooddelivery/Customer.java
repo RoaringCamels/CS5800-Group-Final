@@ -53,5 +53,10 @@ public class Customer {
                 throw new IllegalArgumentException("Invalid diet plan.");
         }
     }
+
+    @Override
+    public String toString() {
+        return name + ", " + address + ", " + county;
+    }
 }
 
