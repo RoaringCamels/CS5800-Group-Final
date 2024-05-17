@@ -8,4 +8,12 @@ public class CreateFoodItemForMain {
     FoodItem hotdog = new HotDog(); 
     FoodItem pizza = new Pizza(); 
     FoodItem taco = new Taco(); 
+
+    public CreateFoodItemForMain(){
+        burger = new Burger();
+        fries = new Fries();
+        hotdog = new HotDog();
+        pizza = new Pizza();
+        taco = new Taco();
+    }
 }
