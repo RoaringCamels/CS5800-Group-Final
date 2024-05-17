@@ -36,6 +36,7 @@ public class CPPFoodDelivery {
     public void placeOrder(Customer customer, Restaurant restaurant, FoodItem foodItem) {
         Order order = new Order(customer, restaurant, foodItem);
         ordersList.add(order);
+        restaurant.notifyObservers("New order placed at " + restaurant.getName());
         System.out.println("Order placed by " + customer.getName() + " for " + foodItem.getName() + " at " + restaurant.getName());
     }
 

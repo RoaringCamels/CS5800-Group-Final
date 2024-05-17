@@ -21,8 +21,7 @@ public class Order {
         this.orderTime = LocalTime.now();
         this.status = "Placed";
         this.orderTime = LocalTime.now();
-        notifyRestaurant();
-        
+        System.out.println(customer + " order has been created.");
     }
 
     public String getStatus() { return status; }
@@ -51,7 +50,7 @@ public class Order {
 
     private void notifyRestaurant() {
         if (restaurant != null) {
-            restaurant.notifyObservers();
+            restaurant.notifyObservers("New order placed at " + restaurant.getName());
         }
     }
 }

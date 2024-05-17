@@ -88,7 +88,7 @@ public class Main {
 
        // Register CustomerObservers
        r1.registerObserver(new CustomerObserver(customer1.getName()));
-       r1.registerObserver(new CustomerObserver(customer2.getName()));
+       r2.registerObserver(new CustomerObserver(customer2.getName()));
 
       // Simulate orders
       cpp.placeOrder(customer1, r1, createFoodItem.burger);

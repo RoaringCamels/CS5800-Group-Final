@@ -43,9 +43,9 @@ public class Restaurant implements Subject{
     }
 
     @Override
-    public void notifyObservers() {
+    public void notifyObservers(String message) {
         for (Observer obs : observers) {
-            obs.update("New order placed at " + name);
+            obs.update(message);
         }
     }
 }
