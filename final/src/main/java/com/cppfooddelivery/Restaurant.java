@@ -1,11 +1,11 @@
 package com.cppfooddelivery;
 
-import com.cppfooddelivery.observer.*;
 import com.cppfooddelivery.observer.Observer;
+import com.cppfooddelivery.observer.Subject;
 
 import java.util.*;
 
-public class Restaurant implements Observer{
+public class Restaurant implements Subject{
     private String name;
     private String address;
     private String county;
@@ -33,7 +33,19 @@ public class Restaurant implements Observer{
     public Menu getMenu() {return menu;}
 
     @Override
-    public void update(String message) {
-        System.out.println("Restaurant " + name + " received notification: " + message);
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer obs : observers) {
+            obs.update("New order placed at " + name);
+        }
     }
 }

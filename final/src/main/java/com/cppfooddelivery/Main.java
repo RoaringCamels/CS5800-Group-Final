@@ -86,12 +86,9 @@ public class Main {
       cpp.addRestaurant(r3);
       cpp.addRestaurant(r4);
 
-      // Create order subject
-      OrderSubject orderSubject = new OrderSubject();
-
-      // Register restaurants as observers
-      orderSubject.resgisterObserver(r1);
-      orderSubject.resgisterObserver(r2);
+       // Register CustomerObservers
+       r1.registerObserver(new CustomerObserver(customer1.getName()));
+       r1.registerObserver(new CustomerObserver(customer2.getName()));
 
       // Simulate orders
       cpp.placeOrder(customer1, r1, createFoodItem.burger);

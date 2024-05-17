@@ -50,14 +50,9 @@ public class Order {
         this.status = "Delivered";
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "customer=" + customer.getName() +
-                ", restaurant=" + restaurant.getName() +
-                ", foodItem=" + foodItem.getName() +
-                ", driver=" + (driver != null ? driver.getName() : "Not assigned") +
-                ", status='" + status + '\'' +
-                '}';
+    private void notifyRestaurant() {
+        if (restaurant != null) {
+            restaurant.notifyObservers();
+        }
     }
 }

@@ -21,15 +21,30 @@ class Driver{
     public String getShift() {return shift;}
 
     public boolean isAvailable(LocalTime time, OperatingHours restaurantHours) {
+        LocalTime shiftStart;
+        LocalTime shiftEnd;
+
         switch (shift) {
             case "1st Shift":
-                return time.isAfter(restaurantHours.getOpenTime()) && time.isBefore(restaurantHours.getCloseTime());
+                shiftStart = LocalTime.of(8, 0);
+                shiftEnd = LocalTime.of(16, 0);
+                break;
             case "2nd Shift":
-                return time.isAfter(restaurantHours.getCloseTime()) && time.isBefore(restaurantHours.getOpenTime());
+                shiftStart = LocalTime.of(16, 0);
+                shiftEnd = LocalTime.MIDNIGHT;
+                break;
             case "3rd Shift":
-                return time.isAfter(restaurantHours.getCloseTime().plusHours(8)) && time.isBefore(restaurantHours.getOpenTime().plusHours(8));
+                shiftStart = LocalTime.MIDNIGHT;
+                shiftEnd = LocalTime.of(8, 0);
+                break;
             default:
                 return false;
+        }
+
+        if (shiftEnd.isAfter(shiftStart)) {
+            return !time.isBefore(shiftStart) && time.isBefore(shiftEnd);
+        } else {
+            return !time.isBefore(shiftStart) || time.isBefore(shiftEnd);
         }
     }
     
