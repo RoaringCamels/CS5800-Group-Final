@@ -1,7 +1,6 @@
 package com.cppfooddelivery;
 import java.util.*;
 
-import com.cppfooddelivery.fooditems.FoodItem;
 import com.cppfooddelivery.fooditems.FoodItemComponent;
 
 public class CPPFoodDelivery {

@@ -1,9 +1,7 @@
 package com.cppfooddelivery;
 
 import java.time.LocalTime;
-import com.cppfooddelivery.fooditems.FoodItem;
 import com.cppfooddelivery.fooditems.FoodItemComponent;
-import java.util.*;
 
 public class Order {
     private Customer customer;
