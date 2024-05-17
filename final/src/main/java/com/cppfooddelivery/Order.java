@@ -13,7 +13,6 @@ public class Order {
     private LocalTime pickupTime;
     private LocalTime deliveryTime;
     private String status;
-    private OrderSubject orderSubject;
 
     public Order(Customer customer, Restaurant restaurant, FoodItem foodItem) {
         this.customer = customer;
