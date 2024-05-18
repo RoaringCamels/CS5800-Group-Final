@@ -25,3 +25,5 @@
 ## Members & Contributions
 * **Ivan Revilla** 
 * **Andy Munoz**
+
+It was only us two. Third group member never showed up and had no contributions before the submission of this assignment.
