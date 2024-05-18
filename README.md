@@ -17,8 +17,11 @@
 
     Allows the customer to add whatever topping they want to their order.
 
+## JUnit
+![JUnit](./images/test.png)
+
 # OOA & OOD for Netflix Competitor, CPPMovies
 
 ## Members & Contributions
-* **Ivan Revilla** - Part 1
-* **Andy Munoz** - Part 2
+* **Ivan Revilla** 
+* **Andy Munoz**

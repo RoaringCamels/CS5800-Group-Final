@@ -2,7 +2,7 @@ package com.cppfooddelivery;
 
 import java.time.LocalTime;
 
-class Driver{
+public class Driver{
     private String name;
     private String address;
     private String county;
