@@ -3,19 +3,19 @@
 ### Patterns being used
 * Singleton
     
-    Singleton is used to create one instance of CPPFoodDelivery
+    Singleton is used to create one instance of CPPFoodDelivery which handles the entire app.
 
 * Factory
 
-    An Abstract Factory is uesd to manage the dietery restictions of the customers
+    An Abstract Factory is uesd to manage the dietery restictions of the customers when creating customer objects.
 
 * Observer
 
-    Implemented so that the restaurant gets notified of all the orders 
+    Implemented so that the restaurant gets notified of all the orders from the customers. 
 
 * Decorator
 
-    Allows the customer to add whatever topping they want to their order
+    Allows the customer to add whatever topping they want to their order.
 
 # OOA & OOD for Netflix Competitor, CPPMovies
 
